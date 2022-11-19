@@ -1,7 +1,7 @@
 import speech_recognition as sr
 import pyttsx3
 import pywhatkit
-
+import datetime
 
 listener = sr.Recognizer()
 engine = pyttsx3.init()
@@ -34,6 +34,8 @@ def run_harvey():
         song = command.replace('play', '')
         talk('Playing the song' + song)
         pywhatkit.playonyt(song)
-
+    elif 'time' in command:
+        time = datetime.datetime.now().strftime('%I %M %p')
+        talk('The current time is' + time)
         
 run_harvey()        
