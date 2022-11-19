@@ -46,5 +46,11 @@ def run_harvey():
         talk(info)
     elif 'joke' in command:
         talk(pyjokes.get_joke())
+    elif 'thank' in command:
+        talk('I hope I helped you, Good bye.')
+        exit()
+    else:
+        talk('Please say that again.')
 
-run_harvey()        
+while True:
+    run_harvey()        
